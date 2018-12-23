@@ -1,0 +1,16 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=c3ea5658a4714dfd82c5;AccountKey=n/Bi+ndwGHVfoCzb7wSncj9qD/Y8l8EhM4iuQlkeJrtTVvsNxXGcR2bFysOJ3rZ5bvVDhB4ODqpG0XQ4MLBhvg==",
+    "AzureWebJobsDashboard": "DefaultEndpointsProtocol=https;AccountName=c3ea5658a4714dfd82c5;AccountKey=n/Bi+ndwGHVfoCzb7wSncj9qD/Y8l8EhM4iuQlkeJrtTVvsNxXGcR2bFysOJ3rZ5bvVDhB4ODqpG0XQ4MLBhvg==",
+    "FUNCTIONS_WORKER_RUNTIME": "java",
+    "EVENT_HUB_CONNECTION": "Endpoint=sb://event-hub-ankit-standard.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=hKOsLud6iKRuULONrCKpK0hoNCzLs1oNu32XLjVHqU4=",
+    "FUNCTIONS_EXTENSION_VERSION": "~2",
+    "WEBSITE_RUN_FROM_PACKAGE": "1",
+    "WEBSITE_CONTENTSHARE": "azure-response-bifur-v138d04289",
+    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "DefaultEndpointsProtocol=https;AccountName=c3ea5658a4714dfd82c5;AccountKey=n/Bi+ndwGHVfoCzb7wSncj9qD/Y8l8EhM4iuQlkeJrtTVvsNxXGcR2bFysOJ3rZ5bvVDhB4ODqpG0XQ4MLBhvg==",
+    "COSMOS_DB_CONNECTION": "AccountEndpoint=https://ankit-cosmos-db.documents.azure.com:443/;AccountKey=bayBtn0yF2vGoBBcayPqqEjY8ZVvXaiWsdQfynUf9hr4q0mj45ywxo9hs0IyyRgXbTdbygb910eKSRVR7KplKg==;",
+    "STORAGE_CONN_STRING": "DefaultEndpointsProtocol=https;AccountName=ankitpocstrorage;AccountKey=HBMC30Y12VlmRq9APifVYk/hKf+WaxTLO1oRjRua8qfwyXKHtNWkOupYPPgZRqq9BfG47jVBD9Qzn6evgOv9Zg==;EndpointSuffix=core.windows.net"
+  },
+  "ConnectionStrings": {}
+}

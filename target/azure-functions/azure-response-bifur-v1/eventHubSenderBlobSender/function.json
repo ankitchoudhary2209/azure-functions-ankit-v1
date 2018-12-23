@@ -1,0 +1,23 @@
+{
+  "scriptFile" : "../azure-response-bifur-1.0-SNAPSHOT.jar",
+  "entryPoint" : "com.inmobi.market.research.Function.eventHubSender",
+  "bindings" : [ {
+    "type" : "httpTrigger",
+    "name" : "req",
+    "direction" : "in",
+    "authLevel" : "anonymous",
+    "methods" : [ "POST" ]
+  }, {
+    "type" : "eventHub",
+    "name" : "eventHubSend",
+    "direction" : "out",
+    "connection" : "EVENT_HUB_CONNECTION",
+    "eventHubName" : "event-hub-recv"
+  }, {
+    "type" : "blob",
+    "name" : "copyToBlobName",
+    "direction" : "out",
+    "connection" : "STORAGE_CONN_STRING",
+    "path" : "ankitblob/{datetime:yyyy}/{datetime:MM}/{datetime:dd}/{datetime:HH}/{datetime:mm}/{datetime:ss}/{id}/{datetime:fffffff}"
+  } ]
+}

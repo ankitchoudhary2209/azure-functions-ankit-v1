@@ -1,0 +1,13 @@
+{
+  "scriptFile" : "../azure-response-bifur-1.0-SNAPSHOT.jar",
+  "entryPoint" : "com.inmobi.market.research.Function.eventHubProcessorPulse",
+  "bindings" : [ {
+    "type" : "eventHubTrigger",
+    "name" : "eventPulse",
+    "direction" : "in",
+    "consumerGroup" : "$Default",
+    "connection" : "EVENT_HUB_CONNECTION",
+    "cardinality" : "one",
+    "eventHubName" : "pulse-event-recv"
+  } ]
+}
