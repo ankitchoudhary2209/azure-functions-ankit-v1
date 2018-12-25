@@ -107,40 +107,40 @@ public class Function {
 //        context.getLogger().info("Message: " + survey.toString());
 //    }
 
-    @FunctionName("eventHubListenerAPIMHeaders")
-    public void eventHubProcessorHeaders(
-            @EventHubTrigger(name = "event",
-                    eventHubName = "event-hub-recv",
-                    cardinality = Cardinality.ONE,
-                    connection = "EVENT_HUB_CONNECTION") String string,
-            final ExecutionContext context) {
-        context.getLogger().info("Message: " + string);
-    }
-
-    @FunctionName("eventHubSenderBlobSender")
-    public void eventHubSender(
-            @HttpTrigger(name = "req", methods = {HttpMethod.POST},
-                    authLevel = AuthorizationLevel.ANONYMOUS) final HttpRequestMessage<Optional<Survey>> req,
-            @EventHubOutput(name = "eventHubSend", eventHubName = "event-hub-recv", connection = "EVENT_HUB_CONNECTION") OutputBinding<Survey> eventHubSurvey,
-            @BlobOutput(name = "copyToBlobName", path = "ankitblob/{datetime:yyyy}/{datetime:MM}/{datetime:dd}/{datetime:HH}/{datetime:mm}/{datetime:ss}/{id}/{datetime:fffffff}", connection = "STORAGE_CONN_STRING") OutputBinding<Survey> blobSurvey,
-            final ExecutionContext context) {
-        Survey survey = req.getBody().get();
-        context.getLogger().info("Message: " + survey.toString());
-
-        blobSurvey.setValue(survey);
-
-        eventHubSurvey.setValue(survey);
-    }
-
-    @FunctionName("eventHubListenerPulseAPIM")
-    public void eventHubProcessorPulse(
-            @EventHubTrigger(name = "eventPulse",
-                    eventHubName = "pulse-event-recv",
-                    cardinality = Cardinality.ONE,
-                    connection = "EVENT_HUB_CONNECTION") Survey survey,
-            final ExecutionContext context) {
-        context.getLogger().info("Pulse Message: " + survey.toString());
-    }
+//    @FunctionName("eventHubListenerAPIMHeaders")
+//    public void eventHubProcessorHeaders(
+//            @EventHubTrigger(name = "event",
+//                    eventHubName = "event-hub-recv",
+//                    cardinality = Cardinality.ONE,
+//                    connection = "EVENT_HUB_CONNECTION") String string,
+//            final ExecutionContext context) {
+//        context.getLogger().info("Message: " + string);
+//    }
+//
+//    @FunctionName("eventHubSenderBlobSender")
+//    public void eventHubSender(
+//            @HttpTrigger(name = "req", methods = {HttpMethod.POST},
+//                    authLevel = AuthorizationLevel.ANONYMOUS) final HttpRequestMessage<Optional<Survey>> req,
+//            @EventHubOutput(name = "eventHubSend", eventHubName = "event-hub-recv", connection = "EVENT_HUB_CONNECTION") OutputBinding<Survey> eventHubSurvey,
+//            @BlobOutput(name = "copyToBlobName", path = "ankitblob/{datetime:yyyy}/{datetime:MM}/{datetime:dd}/{datetime:HH}/{datetime:mm}/{datetime:ss}/{id}/{datetime:fffffff}", connection = "STORAGE_CONN_STRING") OutputBinding<Survey> blobSurvey,
+//            final ExecutionContext context) {
+//        Survey survey = req.getBody().get();
+//        context.getLogger().info("Message: " + survey.toString());
+//
+//        blobSurvey.setValue(survey);
+//
+//        eventHubSurvey.setValue(survey);
+//    }
+//
+//    @FunctionName("eventHubListenerPulseAPIM")
+//    public void eventHubProcessorPulse(
+//            @EventHubTrigger(name = "eventPulse",
+//                    eventHubName = "pulse-event-recv",
+//                    cardinality = Cardinality.ONE,
+//                    connection = "EVENT_HUB_CONNECTION") Survey survey,
+//            final ExecutionContext context) {
+//        context.getLogger().info("Pulse Message: " + survey.toString());
+//    }
 
     @FunctionName("eventHubListenerCXAPIM")
     public void eventHubProcessorCX(
