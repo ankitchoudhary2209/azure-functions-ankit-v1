@@ -107,15 +107,15 @@ public class Function {
 //        context.getLogger().info("Message: " + survey.toString());
 //    }
 
-//    @FunctionName("eventHubListenerAPIMHeaders")
-//    public void eventHubProcessorHeaders(
-//            @EventHubTrigger(name = "event",
-//                    eventHubName = "event-hub-recv",
-//                    cardinality = Cardinality.ONE,
-//                    connection = "EVENT_HUB_CONNECTION") String string,
-//            final ExecutionContext context) {
-//        context.getLogger().info("Message: " + string);
-//    }
+    @FunctionName("eventHubListenerAPIMHeaders")
+    public void eventHubProcessorHeaders(
+            @EventHubTrigger(name = "event",
+                    eventHubName = "event-hub-recv",
+                    cardinality = Cardinality.ONE,
+                    connection = "EVENT_HUB_CONNECTION") String string,
+            final ExecutionContext context) {
+        context.getLogger().info("Message: " + string);
+    }
 
     @FunctionName("eventHubSenderBlobSender")
     public void eventHubSender(
